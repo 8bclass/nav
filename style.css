@@ -14,7 +14,7 @@ nav{
 }
 
 .logo{
-    color: white;
+    color: rgb(236, 236, 236);
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
@@ -51,11 +51,99 @@ nav{
     transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1024px){
-    .nav-links{
-        width: 60%;
-    }
+
+
+.toggle .line1{
+    height: 7px;
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    height: 7px;
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 15%;
+    left: 12%;
+    background: repeating-linear-gradient(to right, rgba(251, 255, 1, 0.7), rgb(255, 213, 135), rgba(255, 0, 0, 0.3));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: slide 100s linear infinite forwards;
+}
+
+@keyframes slide {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 600vw;
+  }
+}
+
+.search .input{
+    position: absolute;
+	top: 25%;
+	left: 12%;
+	width: 20%;
+    height: 4%;
+	border-radius: 0.5rem;
+    background: lightgray;
+    border: none;
+    z-index: 1;
+    outline: none;
+    padding: 0.9rem;
+}
+.search .input:focus{
+    box-shadow: 0 0 0.1rem 0 rgba(53, 53, 53, 0.849);
+    border: solid 1px rgb(83, 83, 83);
+}
+
+.search .search-icon{
+    width: 1rem;
+    position: absolute;
+    top: 25.8%;
+	left: 30%;
+    z-index: 2;
+}
+
+.search .fill{
+    color: rgb(179, 179, 3);
+    position: absolute;
+    top: 30%;
+	left: 14%;
+    font-size: 0.9rem;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.search .not-exist{
+    color: rgb(179, 179, 3);
+    position: absolute;
+    top: 30%;
+	left: 12%;
+    font-size: 0.9rem;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.search .not-exist2{
+    color: rgb(179, 179, 3);
+    position: absolute;
+    top: 33%;
+	left: 12%;
+    font-size: 0.9rem;
+    z-index: 2;
+    visibility: hidden;
+}
+
 
 @media screen and (max-width: 768px){
     body{
@@ -71,9 +159,10 @@ nav{
         flex-direction: column;
         align-items: center;
         width: 40%;
-        height: 50%;
+        height: 40%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        z-index: 3;
     }
 
     .nav-links li{
@@ -83,10 +172,76 @@ nav{
     .burger{
         display: block;
     }
-}
+    .search .input{
+        position: absolute;
+        top: 23%;
+        left: 15%;
+        width: 40%;
+        height: 4%;
+        border-radius: 0.5rem;
+        background: lightgray;
+        border: none;
+        z-index: 1;
+    }
 
-.nav-active{
-    transform: translateX(0%);
+    .search .search-icon{
+        width: 1rem;
+        position: absolute;
+        top: 24%;
+        left: 50%;
+        z-index: 2;
+    }
+
+    h1{
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        background: linear-gradient(to right, rgba(251, 255, 1, 0.7), rgb(255, 213, 135), rgba(255, 0, 0, 0.3));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        animation: slide 30s linear infinite forwards;
+    }
+    @keyframes slide {
+      0%{
+        background-position: 0%;
+      }
+      100%{
+        background-position: 600vw;
+      }
+    }
+
+    .search .fill{
+        color: rgb(179, 179, 3);
+        position: absolute;
+        top: 29%;
+        left: 16%;
+        font-size: 0.8rem;
+        z-index: 2;
+        visibility: hidden;
+    }
+
+    .search .not-exist{
+        color: rgb(179, 179, 3);
+        position: absolute;
+        top: 29%;
+        left: 15%;
+        font-size: 0.7rem;
+        z-index: 2;
+        visibility: hidden;
+    }
+    
+    .search .not-exist2{
+        color: rgb(179, 179, 3);
+        position: absolute;
+        top: 32%;
+        left: 15%;
+        font-size: 0.7rem;
+        z-index: 2;
+        visibility: hidden;
+    }
+
 }
 
 @keyframes navLinkFade{
@@ -100,16 +255,13 @@ nav{
     }
 }
 
-.toggle .line1{
-    height: 7px;
-    transform: rotate(-45deg) translate(-5px, 6px);
+@media screen and (max-width: 1024px){
+    .nav-links{
+        width: 100%;
+        background-color: rgb(17, 17, 17);
+    }
 }
 
-.toggle .line2{
-    opacity: 0;
-}
-
-.toggle .line3{
-    height: 7px;
-    transform: rotate(45deg) translate(-5px, -6px);
+.nav-active{
+    transform: translateX(0%);
 }
