@@ -21,9 +21,27 @@ const navSlide = () => {
 
         //Burger Animation
 
-        burger.classList.toggle("toggle")
+        burger.classList.toggle('toggle')
     })
 
 }
 
 navSlide()
+
+function active(){
+    var search = document.querySelector('.search .input').value
+
+    if(search == 'Հանրահաշիվ'){
+        alert('Հանրահաշիվ')
+    }
+    else if(search == ''){
+        document.querySelector('.search .fill').style.visibility = 'visible'
+        document.querySelector('.search .not-exist').style.visibility = 'hidden'
+        document.querySelector('.search .not-exist2').style.visibility = 'hidden'
+    }
+    else{
+        document.querySelector('.search .fill').style.visibility = 'hidden'
+        document.querySelector('.search .not-exist').style.visibility = 'visible'
+        document.querySelector('.search .not-exist2').style.visibility = 'visible'
+    }
+}
